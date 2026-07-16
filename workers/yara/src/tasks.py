@@ -277,7 +277,7 @@ def command(
             input_file_path = input_file.get("path")
             # Check if disk image, mount and add mountpoints to scan
             if mount_disk_images and is_disk_image(input_file):
-                bd = BlockDevice(input_file_path, min_partition_size=1)
+                bd = BlockDevice(input_file_path)
                 bd.setup()
                 mountpoints = bd.mount()
                 disks_mounted.append(bd)
